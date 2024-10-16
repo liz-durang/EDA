@@ -11,8 +11,17 @@ class Main{
         Node.printLinkedList(stack);
          
         stack = stack.pop();
+        int data = stack.peek();
+        System.out.println(data);
+        
+        stack = stack.pop();
+        stack = stack.pop();
+        stack = stack.pop();
 
         Node.printLinkedList(stack);
+        
+        boolean res = Node.isEmpty(stack);
+        System.out.println(res);
     }
 }
 
@@ -37,6 +46,14 @@ class Node{
         System.out.println("Elemento removido: " + this.data);
         
         return this.next;
+    }
+    
+    public int peek(){
+        return this.data;
+    }
+    
+    public static boolean isEmpty(Node n){
+        return n == null;
     }
     
     public static void printLinkedList(Node n){
